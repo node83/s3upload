@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+if [ $# -eq 0 ]; then
+    echo "usage: $0 <script>"
+    exit 1
+fi
+cd "${0%/*}"
+./venv/bin/python3 s3upload.py $*
+exit $?
